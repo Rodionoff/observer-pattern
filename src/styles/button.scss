@@ -1,0 +1,57 @@
+body {
+    // color: #fff;
+    color: #333;
+    font-family: Roboto, Arial, sans-serif;
+
+}
+
+.title,
+.text {
+    color: inherit;
+    transition: color 1s;
+}
+
+// .title {
+//   
+// }
+
+.text {
+    font-size: 1.2rem;
+}
+
+svg {
+    transition: background-color 1s;
+}
+
+
+svg {
+    width: 50px;
+    height: 50px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #333;
+    fill: white;
+    stroke: white;
+    // background-color: red;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.button {
+    background-color: midnightblue;
+    border: 1px dashed #333;
+    cursor: pointer;
+    color: white;
+    display: block;
+    font-size: 1.2rem;
+    padding: 10px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+
+    &:last-of-type {
+        margin-right: 0;
+    }
+}
