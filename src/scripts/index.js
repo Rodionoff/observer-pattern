@@ -39,6 +39,11 @@ buttons.forEach(button => {
     button.onclick = () => observer.resetColor();
     return;
   }
+
+  if (button.dataset.animate) {
+    button.onclick = () => observer.animate();
+    return;
+  }
    
   button.onclick = () => observer.updateColor(color)
 })

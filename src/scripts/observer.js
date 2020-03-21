@@ -1,4 +1,5 @@
 import gsap from 'gsap';
+import colors from './colors.js';
 
 class Observer {
   constructor() {
@@ -25,6 +26,15 @@ class Observer {
 
   resetColor() {
     this.updateColor('initial')
+  }
+
+  animate() {
+    let time = 0;
+    this.subscribers.forEach(subscriber => {
+      let color = colors.getRandomColor()
+      gsap.to(subscriber, time, {backgroundColor: color});
+      time+=1;
+    })
   }
 }
 

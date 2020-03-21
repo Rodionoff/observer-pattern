@@ -5,10 +5,17 @@ class Colors {
             midnightblue: 'midnightblue',
             cornflowerblue: 'cornflowerblue'
         }
+        this.colorNames = Object.keys(this.colors)
     }
     
     getColor(color) {
         return this.colors[color] ? this.colors[color] : 'lightpink'
+    }
+
+    getRandomColor() {
+        const index = parseInt(Math.random() * this.colorNames.length);
+        const randomName = this.colorNames[index];
+        return this.colors[randomName]
     }
 }
 
