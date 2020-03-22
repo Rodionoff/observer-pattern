@@ -29,7 +29,7 @@ class Observer {
   }
 
   resetColor() {
-    this.timeLine1.kill();
+    if (this.timeLine1) this.timeLine1.kill();
     this.updateColor('initial')
   }
 
