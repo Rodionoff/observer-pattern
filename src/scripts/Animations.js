@@ -3,46 +3,37 @@ import gsap from 'gsap';
 class Animations {
   constructor() {
     this.timeLines = [];
+    this.animationDuration = 1;
   }
-
 
   animate(subscribers, color) {
     let timeLine = gsap.timeline();
 
     this.timeLines.push(timeLine);
 
-    timeLine.to(subscribers, { backgroundColor: color, duration: 1 });
+    timeLine.to(subscribers, this.animationDuration, { backgroundColor: color });
+  }
+
+  animateBackgroundColor(element)  {
+    let timeLine = gsap.timeline();
+
+    this.timeLines.push(timeLine);
+
+    let backgroundColor = element.style.backgroundColor;
+
+    timeLine.to(element, this.animationDuration, { backgroundColor: backgroundColor, onComplete: () => {
+    }});
   }
 
   clean(subscribers, color) {
     let timeLine = gsap.timeline();
 
     this.timeLines.push(timeLine);
-    // let delay = 0;
     
-      timeLine.to(subscribers, { backgroundColor: color, duration: 1, onComplete: () => {
+      timeLine.to(subscribers, this.animationDuration, { backgroundColor: color, onComplete: () => {
         timeLine.kill();
       }});
-      // delay += 1;
   }
-
-  // animateInSequence(subscribers, color) {
-    // let timeLine = gsap.timeline();
-
-    // this.timeLines.push(timeLine);
-
-    // subscribers.forEach(subscriber => {
-      // timeLine.to(subscriber, { backgroundColor: color, duration: 1});
-    // })
-  // }
-
-  // resetAnimations() {
-    // if (this.timeLines.length > 0) {
-      // this.timeLines.forEach(tl => {
-        // tl.kill();
-      // })
-    // }
-  // }
 }
 
 export default new Animations();

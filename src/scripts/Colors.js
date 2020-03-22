@@ -4,7 +4,7 @@ class Colors {
             midnightblue: '#191970',
             darkcyan: '#008b8b',
             cornflowerblue: '#6495ed',
-            clean: '#ffffff'
+            white: '#ffffff'
         }
         this.colorNames = Object.keys(this.colors)
     }
