@@ -14,17 +14,6 @@ class Animations {
     timeLine.to(subscribers, this.animationDuration, { backgroundColor: color });
   }
 
-  animateBackgroundColor(element)  {
-    let timeLine = gsap.timeline();
-
-    this.timeLines.push(timeLine);
-
-    let backgroundColor = element.style.backgroundColor;
-
-    timeLine.to(element, this.animationDuration, { backgroundColor: backgroundColor, onComplete: () => {
-    }});
-  }
-
   clean(subscribers, color) {
     let timeLine = gsap.timeline();
 

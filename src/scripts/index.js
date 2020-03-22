@@ -21,8 +21,8 @@ buttons.forEach((button, i) => {
   }
 
   const color = colors.getColor(button.dataset.background);
-  button.style.backgroundColor = color;
-  
+  // button.style.backgroundColor = color;
+
   if (button.dataset.clean) {
     button.onclick = () => observer.clean(color);
     return;

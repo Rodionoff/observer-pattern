@@ -47,4 +47,20 @@ svg {
     &:last-of-type {
         margin-right: 0;
     }
+
+    &[data-background="midnightblue"] {
+        background-color: #191970;
+    }
+
+    &[data-background="darkcyan"] {
+        background-color: #008b8b;
+    }
+
+    &[data-background="cornflowerblue"] {
+        background-color: #6495ed;
+    }
+    
+    &[data-background="white"] {
+        background-color: #ffffff;
+    }
 }
