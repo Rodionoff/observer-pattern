@@ -30,8 +30,8 @@ class Observer {
 
   animate() {
     let time = 0;
+    let color = colors.getRandomColor()
     this.subscribers.forEach(subscriber => {
-      let color = colors.getRandomColor()
       gsap.to(subscriber, time, {backgroundColor: color});
       time+=1;
     })
