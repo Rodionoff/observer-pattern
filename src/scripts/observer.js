@@ -4,6 +4,7 @@ import colors from './colors.js';
 class Observer {
   constructor() {
     this.subscribers = []
+    this.timeLines = [];
   }
 
   subscribe(subscriber) {
@@ -29,19 +30,24 @@ class Observer {
   }
 
   resetColor() {
-    if (this.timeLine1) this.timeLine1.kill();
+    if (this.timeLines.length > 0) {
+      this.timeLines.forEach(tl => {
+        tl.kill();
+        console.log('kkk')
+      })
+    }
     this.updateColor('initial')
   }
 
   animate() {
-    let time = 0;
-    let color = colors.getRandomColor()
+    let color = colors.getRandomColor();
     
-    this.timeLine1 = gsap.timeline()
+    let timeLine = gsap.timeline();
+
+    this.timeLines.push(timeLine);
 
     this.subscribers.forEach(subscriber => {
-      this.timeLine1.to(subscriber, time, {backgroundColor: color});
-      time+=1;
+      timeLine.to(subscriber, 1, {backgroundColor: color});
     })
   }
 }
