@@ -17,11 +17,7 @@ class Observer {
 
   updateColor(color) {
     this.subscribers.forEach(subscriber => {
-      // if (subscriber.tagName === 'svg') {
         subscriber.style.backgroundColor = color;
-      // }
-
-      // subscriber.style.color = color;
     });
   }
 
@@ -33,7 +29,6 @@ class Observer {
     if (this.timeLines.length > 0) {
       this.timeLines.forEach(tl => {
         tl.kill();
-        console.log('kkk')
       })
     }
     this.updateColor('initial')
