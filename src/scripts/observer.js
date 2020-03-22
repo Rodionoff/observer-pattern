@@ -24,15 +24,23 @@ class Observer {
     });
   }
 
+  clean() {
+    this.updateColor('initial')
+  }
+
   resetColor() {
+    this.timeLine1.kill();
     this.updateColor('initial')
   }
 
   animate() {
     let time = 0;
     let color = colors.getRandomColor()
+    
+    this.timeLine1 = gsap.timeline()
+
     this.subscribers.forEach(subscriber => {
-      gsap.to(subscriber, time, {backgroundColor: color});
+      this.timeLine1.to(subscriber, time, {backgroundColor: color});
       time+=1;
     })
   }
