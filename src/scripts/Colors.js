@@ -13,8 +13,8 @@ class Colors {
         return this.colors[color] ? this.colors[color] : 'lightpink'
     }
 
-    getColorById(id) {
-        return this.colors[this.colorNames[id]]
+    getInitialColor() {
+        return this.colors[this.colorNames[0]]
     }
 }
 

@@ -1,6 +1,5 @@
 import '../styles/index.scss';
 import '../styles/button.scss';
-import colors from './Colors.js';
 import domNodes from './DomNodes.js';
 import observer from './Observer.js';
 
@@ -13,20 +12,17 @@ svgs.forEach(svg =>
   observer.subscribe(svg)  
 )
 
-buttons.forEach((button, i) => {
-  if (i === 0) {
-    // set initial icons background
-    const initialColor = colors.getColorById(i)
-    observer.updateColor(initialColor)
-  }
+observer.setInitialColor();
 
-  const color = colors.getColor(button.dataset.background);
-  // button.style.backgroundColor = color;
+
+buttons.forEach((button, i) => {
+
+  const buttonsBackgroundColor = button.dataset.background;
 
   if (button.dataset.clean) {
-    button.onclick = () => observer.clean(color);
+    button.onclick = () => observer.clean(buttonsBackgroundColor);
     return;
   }
 
-  button.onclick = () => observer.updateColor(color)
+  button.onclick = () => observer.updateColor(buttonsBackgroundColor)
 })

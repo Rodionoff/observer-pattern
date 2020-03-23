@@ -17,6 +17,10 @@ class Observer {
       animations.animate(this.subscribers, color);
   }
 
+  setInitialColor() {
+    animations.setInitialColor(this.subscribers);
+  }
+
   clean(color) {
     animations.clean(this.subscribers, color);
   }
